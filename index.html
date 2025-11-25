@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jayesh Manani | Cyber Security Analyst</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Roboto+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Placeholder for FontAwesome, using a generic kit or CDN if available/needed, but for now I'll rely on text or simple SVGs if this fails, actually I will use a reliable CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Background Particles -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Scanline Overlay -->
+    <div class="scanlines"></div>
+
+    <!-- Command Palette -->
+    <div class="command-palette-overlay" id="command-palette">
+        <div class="command-palette-modal">
+            <div class="cp-header">
+                <i class="fa-solid fa-terminal"></i>
+                <input type="text" id="cp-input" placeholder="Type a command...">
+                <span class="esc-hint">ESC</span>
+            </div>
+            <div class="cp-results" id="cp-results">
+                <!-- Results injected by JS -->
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">JM<span class="accent">.</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <p class="greeting">Hello, I'm</p>
+                <h1 class="name glitch" data-text="Jayesh Manani">Jayesh Manani</h1>
+                <h2 class="title">Cyber Security Analyst & <br> Cloud Security Engineer</h2>
+                <p class="subtitle">Microsoft Certified: SecOps Analyst (SC-200) | Python | Linux | Cloud | Bash</p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn primary">Get in Touch</a>
+                    <a href="#experience" class="btn secondary">View Work</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- Terminal Window Visual -->
+                <div class="terminal-window">
+                    <div class="terminal-header">
+                        <div class="terminal-controls">
+                            <span class="control red"></span>
+                            <span class="control yellow"></span>
+                            <span class="control green"></span>
+                        </div>
+                        <div class="terminal-title">jayesh@security-ops:~</div>
+                    </div>
+                    <div class="terminal-content">
+                        <div class="command-line">
+                            <span class="prompt">➜</span>
+                            <span class="command">whoami</span>
+                        </div>
+                        <div class="output">
+                            Microsoft Certified: SecOps Analyst (SC-200)<br>
+                            Master of Science in Computer Science<br>
+                            Passionate about AI, ML, & Cloud Security
+                        </div>
+
+                        <div class="command-line">
+                            <span class="prompt">➜</span>
+                            <span class="command">cat skills.json</span>
+                        </div>
+                        <div class="output">
+                            [<br>
+                            &nbsp;&nbsp;"Python", "Linux", "Azure",<br>
+                            &nbsp;&nbsp;"Splunk", "Terraform", "CI/CD"<br>
+                            ]
+                        </div>
+
+                        <div class="command-line">
+                            <span class="prompt">➜</span>
+                            <span class="cursor">_</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I am a <strong>Security-Focused Software Engineer & Cloud Security Specialist</strong> with over
+                        5+ years of hands-on experience at the intersection of software engineering, cloud operations,
+                        machine learning, and data engineering.
+                    </p>
+                    <p>
+                        Certified as a <strong>Microsoft Certified Security Operations Analyst (SC-200)</strong> and
+                        armed with a Master’s in Computer Science, I excel in cross-functional teams to continuously
+                        enhance security posture, compliance readiness, and operational resilience.
+                    </p>
+                    <p>
+                        I am passionate about leveraging AI, ML, automation, and cloud-scale engineering to raise
+                        security standards and streamline detection and response.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills">
+            <h2 class="section-title">Skills & Technologies</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Security Data Platforms</h3>
+                    <p>SIEM (Splunk), Security Event Monitoring</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Programming</h3>
+                    <p>Python, Bash, SQL, Linux, C, JavaScript</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-server"></i>
+                    <h3>DevOps & Automation</h3>
+                    <p>CI/CD, Terraform, Docker, Kubernetes</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-cloud"></i>
+                    <h3>Cloud & Infrastructure</h3>
+                    <p>MS Azure, AWS, GCP, Git</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-database"></i>
+                    <h3>Data Processing</h3>
+                    <p>ETL Pipelines, Data Streaming</p>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-solid fa-file-contract"></i>
+                    <h3>Compliance</h3>
+                    <p>NIST, SOC, GDPR, PCI DSS</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="experience">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Aug 2024 – April 2025</div>
+                    <div class="timeline-content">
+                        <h3>Master Thesis</h3>
+                        <h4>Mercedes-Benz AG (E/E & SW Processes/Methods)</h4>
+                        <ul>
+                            <li>Designed a secure AI-powered chatbot architecture on Azure, leveraging Microsoft best
+                                practices for secure handling of sensitive data using LLMs (Llama 3.1, GPT-4).</li>
+                            <li>Implemented secure data pipelines with Python, Azure Storage, Databricks and Delta
+                                Tables, ensuring encryption and identity management.</li>
+                            <li>Conducted security reviews of cloud-based AI interactions, recommending measures to
+                                mitigate risks and enhance compliance.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Apr 2023 – Aug 2024</div>
+                    <div class="timeline-content">
+                        <h3>AI & Cloud Engineer</h3>
+                        <h4>Mercedes-Benz AG (CoC Big Data & AI)</h4>
+                        <ul>
+                            <li>Developed secure big data processing libraries on Azure for vehicle data analytics,
+                                integrating network security and encryption protocols.</li>
+                            <li>Implemented CI/CD pipelines with GitLab and Jenkins, enforcing security policies for
+                                Microsoft cloud deployments.</li>
+                            <li>Optimized log analysis and security auditing using ELK Stack, identifying risks in
+                                large-scale Azure applications.</li>
+                            <li>Advised internal stakeholders on secure API integrations, aligning with Microsoft 365
+                                standards.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Jul 2022 – Mar 2023</div>
+                    <div class="timeline-content">
+                        <h3>Software and Power BI Engineer</h3>
+                        <h4>Blickshift GmbH</h4>
+                        <ul>
+                            <li>Built secure data processing workflows using Python, Flask, and Microsoft Power BI for
+                                enterprise analytics.</li>
+                            <li>Evaluated cloud applications for security gaps, recommending improvements to safeguard
+                                data visualization platforms.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Oct 2020 – Mar 2022</div>
+                    <div class="timeline-content">
+                        <h3>Software Developer</h3>
+                        <h4>Sameeksha Capital</h4>
+                        <ul>
+                            <li>Engineered a secure fund management system on AWS and Google Cloud, implementing REST
+                                APIs with OAuth2 authentication and encryption.</li>
+                            <li>Managed cloud security configurations, aligning with compliance frameworks like NIST and
+                                SOC.</li>
+                            <li>Advised team on securing financial data workflows, enhancing infrastructure resilience.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Jul 2019 – Oct 2020</div>
+                    <div class="timeline-content">
+                        <h3>Research Associate</h3>
+                        <h4>IIM (Indian Institute of Management) Ahmedabad</h4>
+                        <ul>
+                            <li>Conducted data research on financial datasets from IMF and World Bank.</li>
+                            <li>Developed secure ETL pipelines for financial datasets, incorporating encryption and
+                                access controls.</li>
+                            <li>Developed a tool to automate secure API data extraction and filtering.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">Jan 2019 – Jul 2019</div>
+                    <div class="timeline-content">
+                        <h3>Big Data and ML Engineer</h3>
+                        <h4>Allevents.in</h4>
+                        <ul>
+                            <li>Designed secure ETL workflows on GCP, integrating Kafka for real-time data streaming and
+                                threat detection.</li>
+                            <li>Implemented ML-based analytics with security measures to prevent data leaks, aligning
+                                with PCI DSS standards.</li>
+                            <li>Applied multi-label text classification with security measures to protect sensitive data
+                                in customer-facing applications.</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="education" class="education">
+            <h2 class="section-title">Education & Certifications</h2>
+            <div class="edu-grid">
+                <div class="edu-column">
+                    <h3>Education</h3>
+                    <div class="edu-item">
+                        <h4>Master of Science (M.Sc. Cybersecurity)</h4>
+                        <p>BTU Cottbus | Oct 2025</p>
+                    </div>
+                    <div class="edu-item">
+                        <h4>42 Heilbronn (Core Curriculum)</h4>
+                        <p>42 Heilbronn | Oct 2025</p>
+                    </div>
+                    <div class="edu-item">
+                        <h4>Master of Science (M.Sc. Computer Science)</h4>
+                        <p>University of Stuttgart | Apr 2022 – Apr 2025</p>
+                        <p class="small">Thesis: GenAI-powered chatbot development using cloud-based infrastructure.</p>
+                    </div>
+                    <div class="edu-item">
+                        <h4>Bachelor of Engineering</h4>
+                        <p>L.D. College of Engineering, GTU, Ahmedabad | Aug 2014 – Jan 2019</p>
+                        <p class="small">Major: Computer Engineering</p>
+                    </div>
+                </div>
+                <div class="edu-column">
+                    <h3>Certifications</h3>
+                    <ul class="cert-list">
+                        <li>Microsoft Certified: Security Operations Analyst (SC-200) | Jun 2025</li>
+                        <li>Google Cybersecurity Professional Certification | Ongoing</li>
+                        <li>Foundation of Ethical Hacking (Nanodegree) | Udacity | Feb 2025</li>
+                        <li>Generative AI with Large Language Models | DeepLearning.AI | May 2024</li>
+                        <li>IBM Data Science Specialization | Coursera | Jan 2020</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-container">
+                <p>I'm currently looking for new opportunities in Cyber Security and Cloud Engineering. Whether you have
+                    a question or just want to say hi, I'll try my best to get back to you!</p>
+                <div class="contact-links">
+                    <a href="mailto:mananijh@gmail.com" class="contact-btn"><i class="fa-solid fa-envelope"></i>
+                        mananijh@gmail.com</a>
+                    <a href="https://linkedin.com/in/mananijayesh" target="_blank" class="contact-btn"><i
+                            class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/jayeshmanani/" target="_blank" class="contact-btn"><i
+                            class="fa-brands fa-github"></i> GitHub</a>
+                </div>
+                <p class="location"><i class="fa-solid fa-location-dot"></i> Ludwigsburg, Germany</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Jayesh Manani. Built with <i class="fa-solid fa-code"></i> and <i
+                class="fa-solid fa-coffee"></i>.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
